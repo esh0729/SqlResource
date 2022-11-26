@@ -29,7 +29,7 @@ CREATE TABLE t_Hero
 	characterId				int						NOT NULL,
 	lastLoginTime			datetimeoffset				NULL,
 	lastLogoutTime			datetimeoffset				NULL,
-	lastContinentId			int						NOT NULL,
+	//lastContinentId			int						NOT NULL,
 	lastXPosition			float					NOT NULL,
 	lastYPosition			float					NOT NULL,
 	lastZPosition			float					NOT NULL,
@@ -53,7 +53,7 @@ CREATE INDEX idx_t_Hero__heroId ON t_Hero (heroId) ON [INDEX]
 GO
 
 ALTER TABLE t_Hero ADD
-	CONSTRAINT df_t_Hero__lastContinentId		DEFAULT(0)	FOR lastContinentId,
+	CONSTRAINT df_t_Hero__lastLocationId		DEFAULT(0)	FOR lastLocationId,
 	CONSTRAINT df_t_Hero__lastXPosition			DEFAULT(0)	FOR lastXPosition,
 	CONSTRAINT df_t_Hero__lastYPosition			DEFAULT(0)	FOR lastYPosition,
 	CONSTRAINT df_t_Hero__lastZPosition			DEFAULT(0)	FOR lastZPosition,

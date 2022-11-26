@@ -136,6 +136,20 @@ CREATE TABLE r_Character
 GO
 
 --=================================================================
+-- 테이블 이름		: 위치
+-- 마지막 수정자	: 이상현
+--=================================================================
+CREATE TABLE r_Location
+(
+	locationId		int			NOT NULL,
+
+	CONSTRAINT pk_r_Location PRIMARY KEY NONCLUSTERED (
+		locationId
+	) ON [INDEX]
+) ON [TABLE]
+GO
+
+--=================================================================
 -- 테이블 이름		: 대륙
 -- 마지막 수정자	: 이상현
 --=================================================================
@@ -143,6 +157,7 @@ CREATE TABLE r_Continent
 (
 	continentId			int				NOT NULL,
 	sceneName			varchar(50)		NOT NULL,
+	locationId			int				NOT NULL,
 	x					float			NOT NULL,
 	y					float			NOT NULL,
 	z					float			NOT NULL,
